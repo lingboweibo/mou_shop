@@ -1,0 +1,27 @@
+﻿/* CSS Document */
+/*样式*/
+body{padding-top: 1.32rem;}
+.header h2{box-sizing:border-box;}
+.header h2>div:last-child{font-size: .24rem;right:1%;text-align: center;}
+.header h2>input{width:58%;height:.6rem;padding:0 9% 0;border:1px solid #c4c4c4;border-radius:.25rem;background: url(../imgs/search.jpg) 4.5% center no-repeat;}
+
+.main .menu_list{width:100%;height:auto;overflow:hidden;border-bottom: 1px solid #e0e0e0;position:fixed;top:.86rem;left:0;z-index: 999;}
+.main .menu_list li{width:25%;height:.48rem;padding:.12rem 0;float: left;box-sizing:border-box;}
+.main .menu_list li a{display: block;border-right:1px solid #e0e0e0}
+.main .menu_list li:last-child a{border:none}
+
+
+
+.main .goods_list {height:auto;overflow:hidden;text-align: left;}
+.main .goods_list img{width:100%;}
+.main .goods_list li{width:50%;padding:.06rem .1rem .18rem;float: left;box-sizing:border-box;position:relative;}
+.main .goods_list li h4{color:#494949;height:.56rem;line-height:.56rem;font-size:.26rem;overflow:hidden;white-space: nowrap;text-overflow: ellipsis;}
+.main .goods_list li span:nth-child(3){font-size:.24rem;color:#860d04;padding-right: .1rem;height:.48rem;line-height:.48rem;}
+.main .goods_list li span:nth-child(4){font-size:.20rem;color:#878787;}
+.main .goods_list li span:nth-child(5){font-size:.38rem;color:#f19504;display:inline-block;float: right;}
+.main .goods_list li span:nth-child(6){width:.64rem;height:.64rem;line-height:.64rem;position: absolute;top:.1rem;left:.1rem;background:#79a52c;color:#fefefc;text-align: center;display:block;border-radius:.32rem;}
+.main h5{height:.3rem;padding:.3rem 0 .2rem;color:#2f2f2f;margin-top: .24rem;}
+.main h5 img{width: .3rem;height:.3rem;line-height:.3rem;}
+
+// .main{position:relative}
+.main .quick{width:.68rem;height:.68rem;line-height:.68rem;position:fixed;bottom:1.3rem;right:.3rem;border-radius:.34rem;border:1px solid #e0e0e0;text-align: center;font-size:.38rem;background: #fff;}

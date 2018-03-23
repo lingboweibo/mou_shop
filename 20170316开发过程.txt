@@ -1,0 +1,60 @@
+上传商品分类图标相关代码优化调整
+
+
+======商品表 goods======
+id 
+cat_id	int(11) unsigned	0	分类id
+name	varchar(120)		商品名称
+click_count	int(10) unsigned	0	点击数(不是必须)
+
+price	decimal(10,2) unsigned	0.00	价格
+产地 home 选择城市（城市表增加国外）
+规格 format varchar(32)
+keywords	varchar(255)		商品关键词(不是必须)
+remark	varchar(255)		商品简单描述(不是必须)
+content	text		商品详细描述
+
+is_on_sale	tinyint(1) unsigned	1	是否上架(不是必须)
+on_time	datetime 商品上架时间(不是必须)
+sort	smallint(4) unsigned	50	商品排序
+
+is_recommend	tinyint(1) unsigned	0	是否推荐
+is_new	tinyint(1) unsigned	0	是否新品
+is_hot	tinyint(1)	unsigned 0	是否热卖
+last_update	datetime 最后更新时间
+give_integral	mediumint(8)	0	购买商品赠送积分
+sales_sum	int(11)	0	商品销量
+prom_type	tinyint(1)	0	0 普通,1 限时抢购, 2 促销优惠
+
+month_star tinyint(1) unsigned 季节范围开始月份
+day_star tinyint(1) unsigned 季节范围开始日期
+month_end tinyint(1) unsigned 季节范围结束月份
+day_end tinyint(1) unsigned 季节范围结束日期
+
+===========
+商品图片（有多个可能要另建一张表）
+
+
+建好上面的商品表之后，继续练习做商品列表页面和添加商品
+商品控制器名 Goods
+
+商品列表页面，列表显示 id 商品名称 价格 排序 销量 是否上架 购买商品赠送积分 是否新品 是否推荐 prom_type 最后更新时间
+
+添加商品、修改商品
+
+
+作业：
+1、给商品列表页面 增加 上架或下架的链接（已经上架的就显示下架链接，已经下架的就显示上架链接），点击后要实现相应的功能；
+2、商品列表操作接收一个 名称为cat_id 的get 参数，如果此参数不为空就只列出 cat_id = 传来的ID的商品
+	$cat_id = I('get.cat_id','',FILTER_SANITIZE_NUMBER_INT);
+	$arr = array();
+	if($cat_id != '')$arr['cat_id'] = $cat_id;
+
+
+
+
+   商品表 is_on_sale 字段 = 1 就表示是上架，=0就表示下架
+
+下面的未做
+ajax的错误提示也可以放到一个公共函数里
+以后做一个删除职业数据缓存的功能，

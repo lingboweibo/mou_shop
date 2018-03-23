@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>订单详情</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/pub.css">
+	<link rel="stylesheet" href="css/order_detail.css">
+</head>
+<body>
+	<div class="header">
+		<h2>订单详情
+			<div onclick="window.history.back()"><i class="icon-angle-left"></i></div>
+		</h2>
+	</div>
+	<div class="main">
+		<ul class="msg">
+			<li>
+				<div class="left">订单号：</div>
+				<div class="right">17241000038</div>
+			</li>
+			<li>
+				<div class="left">成交时间：</div>
+				<div class="right">2017/4/10 10:05:56</div>
+			</li>
+			<li>
+				<div class="left">当前状态：</div>
+				<div class="right">等待配货</div>
+			</li>
+			<li>
+				<div class="left">收货人：</div>
+				<div class="right">李星</div>
+			</li>
+			<li>
+				<div class="left">手机号码：</div>
+				<div class="right">13455666666</div>
+			</li>
+			<li>
+				<div class="left">收货地址：</div>
+				<div class="right">广东省广州市天河区xxx</div>
+			</li>
+			<li>
+				<div class="left">支付信息：</div>
+				<div class="right">货到付款 城市超市礼品卡</div>
+			</li>
+		</ul>
+		<!-- 商品列表 -->
+		<ul class="goods_list">
+			<h3>共1件商品</h3>
+				<li data-goods_id="" data-id="">
+				    <div class="left"><img src="imgs/c085.jpg" alt=""><!-- <div class="word">买2送1</div> --></div>
+				    <div class="right">
+				        <h4>西瓜</h4>
+				        规格：1个<br>
+				        <span>￥<sapn class="price">8.00</sapn><span class="number">x 1</span></span>
+				    </div>
+				    <!-- <div class="bottom"><span>赠品</span>夏迪邮票莫斯卡多白气泡酒x2</div> -->
+				</li>
+		</ul>
+		<!-- 商品总额 -->
+		<div class="goods_money">
+			优惠：￥ 8.00<br>
+			运费：￥ 10.00 <span>总计：￥ 18.00</span>
+		</div>
+		<div class="tips">
+			说明：如果取消订单，请拨打客服热线 400-811-1797
+		</div>
+	</div>
+	<?php include $includePath . '/footer.php';?>
+<script src="js/jquery-1.8.2.min.js"></script>
+<script src="js/pub.js"></script>
+</body>
+</html>

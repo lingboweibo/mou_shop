@@ -1,0 +1,13 @@
+﻿/* CSS Document */
+/*样式*/
+button{width:100%;border-radius:0;}
+.foot a{width:100%;display:block;height:.8rem;line-height:.8rem;color:#fff;}
+.main ul{margin-bottom:.2rem;border-top: 1px solid #dfdfdf;}
+.main ul li{height:auto;overflow: hidden;line-height:.5rem;border-bottom: 1px solid #dfdfdf;padding:.12rem 5.4% .12rem 6.6%;text-align: left;color:#161616}
+.main ul li input{vertical-align: middle;}
+.main ul li label{color:#363636;}
+.main ul li span,.main ul li div{float: right}
+.main ul li span{margin-left:.3rem;}
+.main ul li span i{font-size: .32rem;}
+.main ul li div{margin-left:.2rem;color:#363636;}
+.main ul li div i{margin-right: .1rem;color:#8e8e8e;}

@@ -1,0 +1,11 @@
+//返回历史页面
+$("#back").click(function(){
+	window.history.back();
+})
+//cart.html、login.html、address.html的跳转事件
+$("#main").click(function(){
+	$(".pageJump").hide();
+});
+$("#showpage").click(function(){
+	$(".pageJump").show();
+});

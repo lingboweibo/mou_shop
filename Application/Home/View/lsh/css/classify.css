@@ -1,0 +1,19 @@
+﻿/* CSS Document */
+/*样式*/
+.header h2>div:nth-child(2){left:0;text-align: center;}
+.header h2>input{width:65%;height:.6rem;padding:0 9% 0;border:1px solid #c4c4c4;border-radius:.25rem;background: url(../imgs/search.jpg) 4.5% center no-repeat;}
+
+.main .left{width:25%;background: #666;position:fixed;overflow:hidden;bottom:1.03rem;top:.87rem;}
+.main .left ul{width:100%;height:100%;overflow-y: auto;overflow-x: hidden;padding-right:20%}
+.main .left ul li{height:.94rem;line-height:.94rem;text-align: center;background: #f6f2f1;padding:0;border-bottom: 1px solid #dfdfdf;box-sizing: border-box;}
+.main .left ul li a{display:block;}
+.main .left ul .selected{background: #fff;}
+
+.main .right{width:75%;background: #fff;position:fixed;overflow:hidden;bottom:1.03rem;top:.87rem;;right:0}//padding-left:25%;.86rem;
+.main .right #h3,.main .right div{text-align:left;color:#4a4a4a;padding-left:.38rem;}
+.main .right .scroll{width:100%;height:100%;overflow-y: auto;overflow-x: hidden;padding-right:20%}
+.main .right ul{height:auto;overflow: hidden;}
+.main .right ul li a{display: block;}
+.main .right ul li{width:33.33%;float: left;text-align: center;box-sizing: border-box;}
+.main .right ul li img{width:90%}
+.main .right h3{text-align:left;color:#4a4a4a;padding-left:.38rem;padding-top:.36rem;}

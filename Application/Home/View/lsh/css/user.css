@@ -1,0 +1,58 @@
+﻿/* CSS Document */
+/*样式*/
+button{
+	margin:.3rem auto;
+}
+button>a{
+    height: .8rem;
+    line-height: .8rem;
+	display:block;
+	color:#fff;
+}
+.my-message{
+	width:100%;
+	height:3.7rem;
+	margin-bottom: .2rem;
+}
+.my-message div{
+	width:100%;
+	height:2.05rem;
+	line-height:.2rem;
+	padding-top:.35rem;
+	background: #df6f61;
+	text-align: center;
+}
+.my-message div img{
+	width:1.25rem;
+	height:1.25rem;
+	display:block;
+	margin:0 auto;
+}
+.my-message div h3{
+	color:#fff;
+}
+.my-message ul{
+	height:auto;
+	overflow:hidden;
+}
+.my-message ul li{
+	width: 33.3%;
+	border-right: 1px solid #bf3034;
+	float:left;
+	box-sizing: border-box;
+}
+.my-message ul a{
+	padding:.3rem 0 .2rem;
+	display:block;
+}
+.my-message ul li:last-child{
+	border-right:none;
+}
+// .my-message ul li:first-child{
+// 	line-height:.31rem;
+// }
+.my-message ul li span{
+	font-size:.36rem;
+    line-height:.36rem;
+	display:block;
+}

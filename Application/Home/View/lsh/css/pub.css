@@ -1,0 +1,77 @@
+/* CSS Document */
+/*公共样式*/
+*{margin:0;padding:0;}
+html,p,table,tr,td,th,h1,h2,li,dd,dt,input,select,button,textarea{background: #fff}
+img{ border: none;vertical-align: middle;}
+input{border: none;outline:none}
+ul>li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:.28rem;}
+body,input,select,button,textarea{font-size:.24rem;font-family:"微软雅黑";}
+html{background: #f6f6f6;height:100%}
+button{ cursor: pointer;/*鼠标样式*/border: none}
+p{ text-indent:2em;}
+i,em,cite{font-style:normal;}
+a,a:link{color:#343434;text-decoration:none;}
+a:visited{}
+a:active, a:hover{text-decoration:none;}
+a:focus{outline:none;}
+
+body .*{font-size:.24rem;font-family:"微软雅黑";}
+
+@media (max-width:1940px){html:root{font-size: 100px}}
+@media (max-width:1440px){html:root{font-size: 85px}}
+// @media (max-width:1024px){html:root{font-size: 75px}}
+// @media (max-width:960px){html:root{font-size: 70px}}
+// @media (max-width:800px){html:root{font-size: 65px}}
+// @media (max-width:750px){html:root{font-size: 60px}}
+@media (max-width:720px){html:root{font-size: 50px}}
+
+// @media only screen and (max-width:1080px),only screen and (max-device-width:1080px) {html:root {font-size:75px;}}
+// @media only screen and (max-width:960px),only screen and (max-device-width:960px) {html:root {font-size:66.66666666666666px;}}
+// @media only screen and (max-width:800px),only screen and (max-device-width:800px) {html:root {font-size:55.55555555555556px;}}
+//@media only screen and (max-width:720px),only screen and (max-device-width:720px) {html:root {font-size:50px;}}
+
+
+
+body{padding:.86rem 0 1.1rem;}
+.header{position:fixed;top:0;left:0;width:100%;z-index: 999;}
+.header h2{color:#000;height:.86rem;line-height:.86rem;text-align: center;border-bottom: 1px solid #e0e0e0;position:relative;}
+.header h2>div{width:10%;height:.86rem;line-height:.86rem;position: absolute;font-size:.48rem;display:block;top:0;color:#6f6f6f;}
+.header>h2>div:last-child{right:20px;text-align: right;}
+.header>h2>div:first-child{left:0;}
+.header h2>div>i.icon-user{color:#8f1105;}
+.header h2 .nav{width:auto;height:auto;background: #6d6d6d;padding:.08rem 0;border-radius: .08rem;top:.78rem;right:5px;font-size: .24rem;}
+.header h2 .nav ul{position: relative;}
+.header h2 .nav ul li{background: none;}
+.header h2 .nav ul li i{font-size: .36rem;padding-right: .16rem;}
+.header h2 .nav ul li a{height:.64rem;line-height:.64rem;display:block;text-align: left;padding:0 .2rem;color:#fff;}
+.header h2 .nav ul .triangle{position: absolute;border: 6px solid rgba(0,0,0,0);border-bottom: 6px solid #6d6d6d;border-top: none;top:-9px;right:20px;}
+#mongolia_layer{position: fixed;top: 0;}
+#nav{display: none;}
+
+
+.main{text-align: center;color:#949494;}
+.main>i{width:2.5rem;height:2.5rem;line-height:2.5rem;font-size:1.6rem;color:#fff;display: block;margin: 1rem auto .55rem;background: #b7b7b7;border-radius:1.25rem;}
+.main>.user_list{margin-bottom:.2rem;border-top: 1px solid #dfdfdf;}
+.main>.user_list>li{height:.9rem;line-height:.9rem;border-bottom: 1px solid #dfdfdf;text-align: left;}
+.main>.user_list>li>a{padding:0 5.4% 0 6.6%;display:block;}
+.main>.user_list>li div{float:right;font-size:.36rem;}
+.main>.user_list>li .icon{float: left;width:.7rem;font-size:.36rem;}
+.label{width:.4rem;height:.4rem;display:block;background-image: url(../imgs/input.gif);background-size:.8rem;background-repeat: no-repeat; background-position: 0;}
+.foot{width:100%;position:fixed;bottom:0;left:0}
+.foot ul{height:auto;overflow: hidden;border-top:1px solid #dfdfdf;color:#6b6b6b;}
+.foot ul li{float:left;width:25%;text-align: center; position: relative;}
+.foot ul li a{padding:.16rem 0;display:block}
+.foot ul li i{font-size:.36rem;}
+.foot ul li .cart_num{position: absolute;top:.09rem;left:51%;display: inline-block;width:.36rem;height:.36rem;font-size:.18rem;font-style: normal;line-height:.36rem;text-align: center;color: #fff;background-color: #fd2931;border-radius: 50%;}
+.on{color:#8f1105;}
+
+button{
+	width:66.67%;
+	height:.8rem;
+	background: #f7941c;
+	color:#fff;
+	margin:0 auto;
+	text-align: center;
+	border-radius:.1rem;
+}

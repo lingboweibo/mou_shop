@@ -1,0 +1,160 @@
+=====昨天作业任务开发过程=======
+
+1、把后台员工管理其它没建好模板文件的操作，建好对应的模板文件( 模板文件的HTML在 web_study\php\mou_shop\后台页面模板 )
+	edit 修改员工资料
+	editMy 员工自己修改自己的资料
+
+2 、建好下面这个会员管理控制器(要继承后台公共控制器)
+Application\Admin\Controller\UserController.class.php          会员管理控制器
+	操作名：
+	index        列表
+	add          添加会员
+	addSubmit    添加会员提交
+	edit         编辑会员
+	editSubmit   编辑会员提交
+	del          删除 (删除不是真正的删除，是将is_del字段更新为1)
+
+
+3、大概建好会员管理控制器的各个操作对应的模板文件，处理好引入公共的文件(模板文件的HTML在 web_study\php\mou_shop\后台页面模板 )
+	del和addSubmit和editSubmit不需要模板文件
+
+4、建好会员表，字段详见 http://php.50css.com/article/shop/user.php (右键转储SQL文件，把sql文件带过来交作业)
+
+5、给现有的控制器增加test操作 练习模型的where 和 find （这一条自觉练习，不用交作业）
+
+============
+1、给员工表的username字段添加唯一索引，添加了唯一索引之后能实现不会有用户名相同的员工
+   给会员表的username字段添加唯一索引，添加了唯一索引之后能实现不会有用户名相同的员工
+
+   给C:\web_study\php\mou_shop\Application\Admin\View\include\meta.php
+   里面的引入CSS和JS文件的路径的前面增加 __ROOT__
+   使整个项目能适应不放在网站根目录
+   
+   代码如下：
+   
+   <link rel="stylesheet" href="<?php echo __ROOT__ , C('STATIC_PATH');?>/css/pub.css?v=<?php echo C('STATIC_VERSION');?>">
+   <link rel="stylesheet" href="<?php echo __ROOT__ , C('STATIC_PATH');?>/css/font-awesome.min.css">
+   <script type="text/javascript" src="<?php echo __ROOT__ , C('STATIC_PATH');?>/js/jquery-1.8.2.min.js"></script>
+   <script type="text/javascript" src="<?php echo __ROOT__ , C('STATIC_PATH');?>/js/pub.js?v=<?php echo C('STATIC_VERSION');?>"></script>
+   
+   
+   注：__ROOT__ 表示本TP应用（一个TP应用就是一个项目）的根目录所在的实际网站的根目录下面的哪些目录 ，详见TP手册的附录/常量参考/系统常量
+   
+   “实际网站” 是指WEB服务器里的一个站点，比如IIS或Apache 
+   “TP应用” 一般一个TP的入口文件就会有一个对应的应用（或者称为TP项目，一个TP应用也可以说是一个项目，一般情况一个项目就是放在一个站点里，一般放在站点的根目录里）
+   
+   
+   像我IIS上面，某某商城 是一个站，它里面放了一个TP项目，放在根目录的。这是一般情况。
+   
+   PHP例子这个站点中，它就不是一般情况，它里面放了很多项目。有大家交的作业，每天的作业也可以说算是一个项目。
+   也有我每天做的例子项目，这些项目就不是在根目录
+   
+   
+   这样如果TP项目不是放在网站根目录里，那在项目的代码里面就可能会需要获取这个项目是在网站根目录下面的哪个目录里，就可以用—__ROOT__ 常量来获取
+   
+   比如我的 “PHP例子”这个站点中，我的mou_shop项目是在站点的根目录下面的mou_shop目录里，用__ROOT__ 常量就会获取到 "/mou_shop"
+   再如 某个作业项目是这样的文件夹里：lys\20170303\mou_shop 用__ROOT__ 常量就会获取到 "/lys/20170303/mou_shop"
+   
+   apache默认站点 在httpd.conf搜索 DocumentRoot
+   apache添加站点 在httpd.conf搜索 httpd-vhosts.conf 把前面的注释#去掉，就表示引入httpd-vhosts.conf这个配置文件，然后就可以在httpd-vhosts.conf这个配置文件添加站点
+
+2、为了能识别是否登录，在员工登录时要记住他的session，登录控制器的loginSubmit操作里要增加给登录成功的用户用session记住他的id,ip,用户名,姓名的功能。
+   用 adminLoginData 这个名称保存了登录时读取的该用户所在用户表的这一条记录数据的数组
+
+   代码详见 C:\web_study\php\mou_shop\Application\Admin\Controller\LoginController.class.php 的loginSubmit操作
+
+   TP对有session的操作提供方便的函数详见http://www.kancloud.cn/manual/thinkphp/1872
+
+   session赋值也就是保存或更新 session('键或叫名称','值');  例：session('name','value');
+   session取值就读取           session('键或叫名称');       例：$value = session('name');
+
+3、员工表里有上次登录时间、上次登录IP字段，所以登录控制器的loginSubmit操作里要增加给登录成功的用户更新他的上次登录时间、上次登录IP字段的功能。
+   上次登录地点先不管以后再实现。
+
+   更新记录用TP的模型的save方法，该方法的说明详见http://www.kancloud.cn/manual/thinkphp/1762
+   一般用法： 模型->where(条件)->save(要更新的数据);//要更新的数据是一个数组，这个数组是一个一维关联数组，键名要跟字段名对应，值就是要保存的值。
+
+   代码详见 C:\web_study\php\mou_shop\Application\Admin\Controller\LoginController.class.php 的loginSubmit操作
+
+4、给后台公共控制器判断是否登录的方法写好实现相关功能的代码
+   代码详见 C:\web_study\php\mou_shop\Application\Admin\Controller\PubController.class.php
+
+5、给登录控制器的查询条件增加is_del = 0 的条件；（实现让已删除的员工不能登录）
+
+
+============实现 员工列表 页面===========
+1、在C:\web_study\php\mou_shop\Application\Admin\Controller\AdminController.class.php 控制器的index方法里
+   用模型的select方法，模型的条件是 is_del = 0 查询会员表的记录
+
+2、在后台的公共函数目录，建一个后台用的公共函数文件 C:\web_study\php\mou_shop\Application\Admin\Common\function.php
+
+3、然后在后台用的公共函数文件里写一个生成 外观像按钮的链接的HTML 的自定义函数 函数名是butLink
+    //参数是一个数组，有下面的键
+    //url 链接的url
+    //title 链接文字
+    //ico 图标的class      这个键可以没有
+    //attribute 附加属性   这个键可以没有
+    //allClass 附加样式    这个键可以没有
+
+    这样有了这个自定义函数 以后在想显示 外观像按钮的链接 时就可以调用这个函数获取相关HTML然后echo，例：
+    $arr['url']      = U('edit',array('id' => $value['id']));
+    $arr['title']    = '编辑';
+    $arr['ico']      = 'icon-edit';
+    $arr['allClass'] = 'blue';
+    echo butLink($arr);
+
+4、其它未完善的功能以后待加
+
+============添加员工===========
+1、检查添加员工的表单页面，是否有缺少字段（表单项），和表单项的属性按需要调整（input的name和maxlength）
+2、在员工管理控制器的的addSubmit操作里实现接收 添加员工的表单页面 提交来的数据写进数据库员工表。
+   使用了模型的add方法，add方法的详细说明可以看手册： http://www.kancloud.cn/manual/thinkphp/1760
+
+   但是还没有做数据合法性的验证
+   在这之前先学一下自定义模型类 详见手册 http://www.kancloud.cn/manual/thinkphp/1728
+
+   如果只是本模块用的模型可以把模型类文件放在本模块的模型文件夹里 (模型文件夹名是 Model)
+   如果是和其它模块共用的模型可以放到应公共模块的模型文件夹里     (模型文件夹名是 Model)
+   如果对应的模型文件夹不存在，可以自己新建                       (模型文件夹名是 Model)
+
+   因为现在做的这个是后台管理员表的模型，所以暂时觉得不用放到公共模块里就先放到后台模块的Model文件夹里
+
+   模型类文件的文件命名方式 类名.class.php
+
+   代码格式：
+   namespace 模块名\Model;
+   use Think\Model;
+   class 表名驼峰法名称Model extends Model {//模型类的命名规则是除去表前缀的数据表名称，采用驼峰法命名，并且首字母大写，然后加上模型层的名称（默认定义是Model）
+   }
+   
+   建好 员工的表模型类文件，定义好一些验证规则
+   在添加员工的接收操作里进行验证
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AdminModel.class.php
+
+namespace Admin\Model;
+use Think\Model;
+class AdminModel extends Model {
+}
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>提交订单</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/pub.css">
+	<link rel="stylesheet" href="css/detailed_list.css">
+	<link rel="stylesheet" href="css/submit_order.css">
+</head>
+<body>
+	<div class="header">
+		<h2>提交订单</h2>
+	</div>
+	<div class="main">
+		<i class="icon-ok"></i>
+		<h4>您的订单已成功提交！</h4>
+		<button id="order">我的订单</button><button id="index">随便逛逛</button>
+	</div>
+	<?php include $includePath . '/footer.php';?>
+<script src="js/pub.js"></script>
+<script>
+setEvent(document.getElementById('index'),'click',
+	function(){
+		window.location.assign('<?php echo U('Index/index');?>');
+	}
+)
+setEvent(document.getElementById('order'),'click',
+	function(){
+		window.location.assign('<?php echo U('Order/index');?>');
+	}
+)
+</script>
+</body>
+</html>

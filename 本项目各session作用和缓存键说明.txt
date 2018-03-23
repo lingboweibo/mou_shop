@@ -1,0 +1,33 @@
+﻿session（用户私有的，别的用户访问不了别人的，只能访问自己的）
+    adminLoginData 保存后台管理员的登录凭据数据
+    格式如下：
+		Array
+		(
+		    [id] => 1
+		    [username] => admin
+		    [ip] => 0.0.0.0
+		)
+
+    loginData 保存前台会员的登录凭据数据
+    格式如下：
+		Array
+		(
+		    [id] => 1
+		    [username] => admin
+		    [ip] => 0.0.0.0
+		)
+    default_theme 当前用的模板主题，如果为空就表示用默认的
+
+    order_address_id 下单时用的收货地址ID
+    order_goodsid_num 下单页面记住的提交的所选商品ID和数量
+    order_delivery_time 下单页面用的配送时间
+    order_invoice_type   发票类型
+    order_pay_name       支付方式
+
+TP缓存（谁都可以访问）
+    jobData 职业数据
+    city_城市ID 缓存这个城市ID的下级城市
+        比如缓存广东的下级城市，那TP缓存用的键名就是 ：city_440000000
+        比如缓存广州的下级城市，那TP缓存用的键名就是 ：city_440100000
+        一级地区，那TP缓存用的键名就是 ：             city_0
+        因为我们数据库里城市表里pid为0的就是一级地区

@@ -1,0 +1,3 @@
+分类图标 保存在 Uploads\ico             文件名用分类的id作为文件名，后缀用原来的后缀
+商品图片 保存在 Uploads\日期时间        TP默认生成的文件名，文件夹也用默认的按日期的
+商品图片的生成小图跟大图在同一个文件夹只是文件名多了thumb.jpg，比如大图文件名是58cf7a9eea4cd.jpg，小图文件名就会是58cf7a9eea4cd.jpgthumb.jpg

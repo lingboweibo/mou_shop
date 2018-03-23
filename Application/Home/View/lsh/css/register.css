@@ -1,0 +1,46 @@
+﻿/* CSS Document */
+/*样式*/
+.main form ul .left,.main form ul .right{float: left;}
+.main ul{margin-bottom:.2rem;border-top: 1px solid #dfdfdf;}
+.main ul li{height:.9rem;line-height:.9rem;border-bottom: 1px solid #dfdfdf;padding:0 5.4% 0 6.6%;text-align: left;}
+.main form ul .left{
+	width:18%;
+	padding-right:4%;
+	text-align: right;
+	color:#3f3f3f;
+}
+.main form ul .right{
+	width:78%;
+}
+.main form ul .right input{
+	width:68%;
+}
+.main form ul .right img,.main form ul .right button{
+	width:32%;
+	height:.53rem;
+	line-height:.53rem;
+}
+.main form ul li:last-child .right input{
+	width:56%;
+}
+.main .error_msg{
+	height:.2rem;
+	line-height:.2rem;
+	color:#8a011e;
+	padding:.3rem 0;
+}
+.main input[type="button"]{
+	width:70%;
+	height:.8rem;
+	line-height:.8rem;
+	color:#fff;
+	background:#e1e1e1;
+	border-radius:.1rem;
+}
+.main>h3{
+	font-size: .24rem;
+	margin-top: .3rem;
+}
+.main>h3>a{
+	color:#8f1105;
+}

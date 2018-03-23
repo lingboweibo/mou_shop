@@ -1,0 +1,16 @@
+var staticPath="<?php echo $staticPath;?>";
+
+var goodsLists_url="<?php echo U('Goods/lists');?>";
+
+var carAdd_url="<?php echo U('Car/add');?>";
+var carDel_url="<?php echo U('Car/del');?>";
+var carQuantity_url="<?php echo U('Car/quantity');?>";
+var carChecked_url="<?php echo U('Car/checked');?>";
+var carCheckedAll_url="<?php echo U('Car/checkedAll');?>";
+var carCancel_url="<?php echo U('Car/cancel');?>";
+
+var delAddress_url="<?php echo U('Address/delAddress');?>";
+var defaultAddress_url="<?php echo U('Address/setDefault');?>";
+
+var favoriteAdd_url="<?php echo U('Favorite/add');?>";
+var favoriteDel_url="<?php echo U('Favorite/del');?>";

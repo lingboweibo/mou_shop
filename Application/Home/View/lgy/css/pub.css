@@ -1,0 +1,55 @@
+@media (max-width:1940px){html:root{font-size: 100px;}}
+@media (max-width:1440px){html:root{font-size: 85px; }}
+@media (max-width:1024px){html:root{font-size: 75px; }}
+@media (max-width: 960px){html:root{font-size: 70px; }}
+@media (max-width: 800px){html:root{font-size: 65px; }}
+@media (max-width: 750px){html:root{font-size: 60px; }}
+@media (max-width: 720px){html:root{font-size: 50px; }}
+/*
+上面的代码设置窗口大小 小于或等于某个 像素时 设置根元素的文字大小不同，
+实现文档内用rem单位的元素也会跟着窗口大小变化大小
+注意:条件是小于或等于，所以像素大的条件要主在前面，像素小的条件要放在后面
+第一个条件成立时第一个样式生效，如果第二个条件也成立时第二个样式也会生效……
+*/
+
+*{margin:0;padding:0;}
+body{font-size: 0.24rem;background-color: #f6f6f6;height:100%; /*background-color:#eae6e3;*/}
+ul{width: 100%;zoom:1;overflow:hidden;}
+li{list-style: none;}
+img{box-sizing:border-box; display: block;width: 100%}
+a{text-decoration: none; color:#999;font-size: 0.24rem;}
+span{color: #9e96ae;padding-left: 5px;}
+.icon-angle-left{font-size: 18px;margin-left:10px}
+.icon-th{float: right;margin-right:20px;font-size: 18px}
+/*.wrap{max-width:720px;margin:0 auto;}*/
+.clear{zoom:1;overflow:hidden;}/*清除子元素的浮动*/
+.clear:after{display:block;clear:both;visibility:hidden;height:0;content:'';}/*清除子元素的浮动*/
+.icon-arrow-up{border:1px solid #9e96ae;border-radius:100%;padding:5px;font-size: 18px}
+
+#content{width:90px;height:105px;background-color: #aaa;position:fixed;float: right;right:5px;margin-top:35px;}
+#content .slice{border-right:10px solid #fff;border-left:10px solid #fff;border-bottom:10px solid #aaa;width:0;height:0;position: absolute;top:-10px;left:55px;}
+#content .div1{width:90px;height:115px;margin: 0 auto;text-align: center;}
+#content .div1 ul{width: 100%;height:100%;padding: 3px 0}
+#content .div1 ul li{zoom:1;overflow:hidden;width: 100%;padding: 3px 3px}
+#content .div1 ul li a{color: #fff}
+#content .div1 ul li span{text-align: left;margin-right: 10px}
+#content .div1 ul li div{float: left;}
+
+/*中部*/
+.middle{zoom:1;overflow:hidden;width:100%;}
+.middle .topic{padding-top: 10px; background-color:#fff; border-bottom:1px solid #dfdfdf; padding-bottom:10px}
+.middle .left{float: left;width: 10.41666666666667%;font-size: 24px;margin-top:8px;margin-bottom: 5px;}
+.middle .right{float: left;width:79.58333333333333%;height:22px;border: 1px solid #ccc;border-radius:13px;margin-top: 10px;margin-bottom: 5px;padding-top:6px;margin-right: 6.201550387596899% }
+.middle .topic span#textInfo{text-align: center;color: #000;}
+.middle span{color: #000}
+
+.detailsInfo{border-top:1px solid #dfdfdf;width: 100%}
+
+/*固定的底部*/
+
+footer{width:100%;position:fixed;bottom:0;left:0; background: #fff;}
+footer ul{height:auto;width: 100%;overflow: hidden;border-top:1px solid #dfdfdf;color:#666 }
+footer ul li{zoom:1;overflow:hidden;width:25%;text-align:center;display: block;float:left;color:#666;}
+footer ul li a{padding: .20rem 0;display: block;}
+footer ul li span{font-size:20px;padding-left: 0}
+.on{color:#8b0d01 }

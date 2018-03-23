@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ueditor demo</title>
+</head>
+
+<body>
+<h1>UE使用示例</h1>
+<!-- 1 加载编辑器的容器 它是用来代替 <textarea name="content" rows="8"></textarea> -->
+<script id="container" name="content" type="text/plain">
+    123<span style="color:red;">4</span>
+</script>
+<!-- 2 引入 配置文件 -->
+<script type="text/javascript" src="ueditor.config.js"></script>
+<!-- 3 引入 编辑器源码文件 -->
+<script type="text/javascript" src="ueditor.all.js"></script>
+<!-- 4 实例化编辑器 -->
+<script type="text/javascript">
+var ue = UE.getEditor('container',
+    {
+        toolbars: [
+            [//第1行图标
+                'fontfamily',//字体
+                'forecolor',//字体颜色
+            ],
+            [//第2行图标
+                'justifyleft', //居左对齐
+                'justifyright', //居右对齐
+                'justifycenter', //居中对齐
+                'justifyjustify', //两端对齐
+            ],
+            //后面还可以增加第3，第4行图标……
+        ]
+    }
+);
+</script>
+</body>
+
+</html>

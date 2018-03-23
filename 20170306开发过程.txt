@@ -1,0 +1,48 @@
+=====20170306 添加会员=======
+1、把N:\web\mou_shop\Application\Admin\View\include\left.php 里会员管理相关链接的URL改为用U方法生成
+2、检查添加会员的模板文件(J:\web\mou_shop\Application\Admin\View\User\add.php)把需要改的地方改好，有以下几个修改：
+    2.1 如果有 [if lt IE 10] 之类的代码就删除掉，因为这些代码是公共的放到 J:\web\mou_shop\Application\Admin\View\include\meta.php 里了
+    2.2 按照数据库的会员表对照此模板文件里的表单 检查输入框的 name和maxlentgh 如果不对的就改好。如果有多余表单项的就去掉，有缺少的就补上
+      大概要改这些：
+        用户名 maxlentgh="16"
+        密码 maxlentgh="32"
+        姓名 maxlentgh="32"
+        ……
+    2.3 把该页面城市选择联动的JS去掉，以后换成我们自己写的
+
+
+完善好作业
+
+C:\web_study\php\mou_shop\Application\Admin\Common\function.php 里面的  type="button" 是多余的应该去掉
+
+添加员工或会员时增加验证用户名唯一
+代码详见C:\web_study\php\mou_shop\Application\Admin\Model\AdminModel.class.php
+
+修改员工或会员时  验证用户名唯一  或判断是否被别人使用
+代码详见C:\web_study\php\mou_shop\Application\Admin\Model\AdminModel.class.php
+
+实现修改员工
+
+登录时增加验证
+
+实现登录的注销 在 Login控制器，增加一个注销操作，操作名就是quit
+
+
+
+建一个Test控制器用来学习
+学习调试模型，跟踪信息，日志文件查看
+加入公共函数文件 N:\web\mou_shop\Application\Common\Common\function.php
+
+停用、删除员工
+会员表的 is_del = 0 正常      is_del = 1 已删除      is_del = 2 已停用
+员工列表就不能只用 is_del = 0 来查询，如果用这个条件的话is_del = 2 就会查询不到
+需要修改员工管理控制器的员工列表操作里的查询条件
+
+删除员工实现过程：
+1、获取传来的id，并过滤非数字  $id = I('get.id','',FILTER_SANITIZE_NUMBER_INT);//FILTER_SANITIZE_NUMBER_INT 表示过滤非数字
+2、判断id的合法性
+3、获取管理员表模型
+4、执行更新一个字段(is_del = 1  表示已删除)
+5、判断执行结果是否有错，有错就显示错误信息
+5、判断执行结果影响行数是否为0，为0就提示可能之前已被删除
+6、如果执行结果影响行数不为0就提示成功

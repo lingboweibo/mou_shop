@@ -1,0 +1,75 @@
+城市管理
+  修改城市
+  不能修改ID和父ID(如果要修改ID或父ID，那它的下级城市的父ID也要改，下级城市又有下级城市城市他们的父ID也要改……)
+
+  添加或修改城市时城市ID输入框 maxlentgh="9"
+  城市列表的修改链接去掉，有编辑链接就够了
+
+  城市表加上is_del字段
+  is_del 1删除 0正常 2停用 我们很多表都可能会进行这些处理，放到后台公共控制器里了
+
+  删除城市
+  添加城市或删除城市或修改城市时也要把对应的城市的上级城市的的所有下级城市缓存删除掉
+
+  各城市的查询要加上排序,加上is_del = 0 (公共函数里的getCityData 里要加上 is_del = 0和排序，城市控制器里的index里也要加上)
+
+  职业表 order_on 字段改为 order_no
+
+=====下午=========
+  返回问题
+
+后台管理员登录时增加选择字段
+
+密码加密(登录、修改员工、修改自己的密码，等会要改的还有 会员修改)
+
+会员增加注册时间add_time(不能为空，需要有一个默认值)、积分integral(不能为空，默认值0)、消费额use_money(不能为空，默认值0.00，类型是：decimal(10,2))
+会员管理控制器的addSubmit操作增加
+$data['add_time']       = date('Y-m-d H:i:s');
+会员列表页面增加显示这些字段值
+                    echo '    <td>' , $value['add_time'] , '</td>';
+                    echo '    <td class="text_right">' , $value['use_money'] , '</td>';
+                    echo '    <td class="text_right">' , $value['integral'] , '</td>';
+
+
+C:\web_study\php\mou_shop\statics\css\pub.css 169行增加
+.list_tab th.text_right,.list_tab td.text_right{
+    text-align: right;
+    padding-right:10px;
+}
+
+编辑会员页面，会员积分可以改，注册时间和消费额能看不能改
+                <tr>
+                    <th>注册时间:</th>
+                    <td><?php echo $data['add_time'] ?></td>
+                </tr>
+                <tr>
+                    <th>消费额:</th>
+                    <td><?php echo $data['use_money'] ?></td>
+                </tr>
+                <tr>
+                    <th>积分:</th>
+                    <td>
+                        <input name="integral" type="text" maxlentgh="12" size="16" value="<?php echo $data['integral'] ?>">
+                    </td>
+                </tr>
+
+商品分类 先做好普通增删查改
+
+
+======商品分类 category ======
+id smallint  自增
+pid 父id smallint 默认0
+is_del tinyint 1删除 0正常 2停用   默认0
+分类名称 name   varchar(90) 
+图标（一般 一二级没图标，三级有图标）ico varchar(50)，不允许空，有默认值 Empty Strint 也就是空字符串
+排序 order_no tinyint 默认值100
+首页排序 order_index tinyint 默认值100
+
+练习：参考城市管理，把商品分类管理，大概做好。控制器名：Category
+
+图标 暂用一个输入框输入图标的文件名。
+
+
+商品分类的缓存用整表缓存（因为分类一般也就几十个或几百个）
+分类列表
+添加分类（基本功能做好，还差联动）

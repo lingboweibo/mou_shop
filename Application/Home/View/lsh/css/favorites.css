@@ -1,0 +1,11 @@
+﻿/* CSS Document */
+/*样式*/
+.main form ul li{height:auto;overflow: hidden;padding:.18rem 2.6%;border-bottom: 1px solid #e0e0e0}
+.main form ul li .left,.main ul li .right{float: left}
+.main form ul li .left{width:26%;text-align: center;}
+.main form ul li .left img{height:1.6rem;width:1.6rem;}
+.main form ul li .right{width:74%;line-height:.24rem;text-align: left;}
+.main form ul li .right h3{height:.84rem;line-height:.28rem;padding-left:0;}
+.main form ul li .right span{padding-top: .24rem;color:#860a00;display:inline-block;}
+.main form ul li .right i{float: right;padding: .24rem 0 0 .24rem;font-size: .36rem}
+.main form ul li h4{height:.84rem;line-height:.28rem;}

@@ -1,0 +1,38 @@
+﻿/* CSS Document */
+/*样式*/
+body{padding-bottom:1.9rem;}
+.main form ul li{height:auto;overflow: hidden;padding:.18rem 2.5%;text-align: left;border-bottom: 1px solid #e0e0e0;}
+.main form ul li .left,.main form ul li .middle,.main ul li .right,.main form ul li input{float: left}
+
+.main form ul li .left{width:7%}
+.main form ul li .left label,.foot .checkout .left label{width:.4rem;height:.4rem;display:block;background-image: url(../imgs/input.gif);background-size:.8rem;background-repeat: no-repeat; background-position: 0;}
+
+.main form ul li .middle{width:32%;text-align: center;position:relative;}
+.main form ul li .middle img{height:2rem;width:2rem;}
+.main form ul li .middle .word{width:100%;height:.4rem;line-height:.4rem;position: absolute;bottom:0;background: #000;opacity: 0.3;color:#fff;}
+
+.main form ul li .right{width:60%;line-height:.24rem;padding-left:1%;}
+.main form ul li .right h3{line-height:.32rem;padding-bottom:.28rem;}
+.main form ul li .right span{padding:.24rem 0 .2rem;color:#860a00;display:block;}
+.main form ul li .right i{float: right;font-size: .48rem}
+
+.main form ul li .bottom{width:95%;height:.8rem;line-height:.8rem;float: right;color:#a0100f;border-top:1px dashed #e1e1e1;margin: .16rem 0 0 5%;}
+.main form ul li .bottom span{height:.36rem;line-height:.36rem;display:inline-block;margin:0 .2rem;padding:0 .12rem;border:1px solid #a0100f;border-radius:.1rem;}
+
+.main form ul li h4{height:.84rem;line-height:.28rem;}
+
+input[type="checkbox"],input[type="radio"]{width:100%;height:100%;opacity:0;}
+
+.commodity_quantity{width:70%;float:left;}
+.reduce,.plus,.number{height:.45rem;line-height:.45rem;border:1px solid #c3c3c3;float:left;margin-right: .1rem;border-radius:.1rem;text-align: center;}
+.reduce,.plus{width:.45rem;}
+.number{width:45%;}
+
+.foot{background: #fff}
+.foot .discount{height:.8rem;border-top: 1px solid #e0e0e0;line-height:.36rem;padding:.1rem 0}
+.foot .discount div{width:10.6%;height:.8rem;line-height:.8rem;text-align: center;float:left;}
+.foot .checkout{height:.9rem;border-top: 1px solid #e0e0e0;padding-left:2.6%;}
+.foot .checkout .left{height:.9rem;line-height:.9rem;float: left;padding-top:.2rem;box-sizing: border-box;}
+.foot .checkout .middle{height:.9rem;line-height:.45rem;float: right;padding-right:.24rem;}
+.foot .checkout .middle span{color:#8a011d;font-size:.32rem}
+.foot .checkout .right{width:24%;height:.9rem;line-height:.9rem;text-align: center;float:right;background:#8a011d;color:#fff;}

@@ -1,0 +1,32 @@
+﻿/* CSS Document */
+/*样式*/
+body{padding-bottom:4rem;}
+.main .top{height:auto;overflow: hidden;padding:.18rem 0;text-align: left;background: #fff;}
+
+.header {z-index:10;}
+.main .top .left{width:45%;text-align: center;position:relative;float: left;}
+.main .top .left img{width:100%;z-index: 0;}
+.main .top .left .word{width:100%;height:.4rem;line-height:.4rem;position: absolute;bottom:0;background: #000;opacity: 0.3;color:#fff;}
+
+.main .top .right{width:48.5%;line-height:.34rem;padding-right:3.5%;float: right;}
+.main .top .right h3{height:1rem;line-height:.32rem;}
+.main .top .right span{height:.64rem;line-height:.64rem;color:#860a00;display:block;}
+.main .top .right i{float: right;font-size: .48rem;}
+
+.main .bottom{height:auto;overflow:hidden;background:#fff;padding-bottom:.2rem;}
+.main .bottom>span{height:.8rem;line-height:.8rem;display:inline-block;}
+.main .bottom button{width:48.5%;margin-right:3.5%;float:right;background:#aec200;}
+
+.goods_details{text-align: left;background: #fff;padding:0 2.78%;margin-top: .2rem;}
+.main .goods_details img{max-width: 100%;}
+.goods_details h4{height:.66rem;line-height:.66rem;color:#f79731;}
+.goods_details h5{height:.5rem;line-height:.5rem;color:#ff8904;font-size:.32rem;}
+.goods_details p{line-height:.4rem;text-indent: 0;color:#000;padding-bottom:.32rem;}
+
+
+.commodity_quantity{width:80%;float:left;}
+.reduce,.plus,.number{height:.45rem;line-height:.45rem;border:1px solid #c3c3c3;float:left;margin-right: .1rem;border-radius:.1rem;text-align: center;}
+.reduce,.plus{width:.45rem;}
+.number{width:45%}
+
+.foot{background: #fff;}

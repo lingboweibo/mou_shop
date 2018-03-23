@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1>测试注册接口</h1>
+<form action=" http://localhost:8015/index.php?m=Home&c=User&a=regTo" method="post">
+<input type="text" name="nickname" value="测试1号"><br>
+<input type="text" name="mobile" value="13344566889"><br>
+<input type="text" name="validate_code" value="9999"><br>
+<input type="text" name="password" value="13344566889"><br>
+<input type="submit" value="提交测试">
+</form>
+<h1>测试登录接口</h1>
+<form action=" http://localhost:8015/index.php?m=Home&c=User&a=loginTo" method="post">
+<input type="text" name="username" value="13344566889"><br>
+<input type="text" name="password" value="13344566889"><br>
+<input type="submit" value="提交测试">
+</form>
+<p>所有要发送的参数是get方式的接口就可以用直接打网址的方式测试，如果有某些要发送的参数是post方式，就可以用写一个表单的方式。</p>
+<h1>测试修改接口</h1>
+<form action=" http://localhost:8015/index.php?m=Home&c=User&a=editPasswordApi" method="post">
+<input type="text" name="password" value="1234567"><br>
+<input type="text" name="password_old" value="13344566889"><br>
+<input type="submit" value="提交测试">
+</form>
+</body>
+</html>
